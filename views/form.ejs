@@ -1,0 +1,19 @@
+<%- include "partials/header.ejs" %>
+
+  <!-- Add form starts -->
+
+  <form action="/add" method="post" class="form">
+    <div class="form-add">
+        <label for="">Title</label><br>
+        <input type="text" class="title" name="title" value="" placeholder="title">
+     </div>
+     <div class="form-add">
+    <label for="" id="content"> Content </label><br>
+        <textarea name="content" value="" id="content"placeholder="Type anythig"></textarea>
+</div>
+<button type="submit" id="submit"> Add Blog</button>
+    </form>
+
+
+
+<%- include "partials/footer.ejs"%>

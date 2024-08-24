@@ -1,0 +1,20 @@
+
+<%- include("partials/header.ejs") %>
+
+<div class="form-container">
+    <h2>Edit your Blog</h2>
+        <form action="/update/<%= index %>" method="post" class="form">
+            <div class="form-add">
+                <label for="">Title</label><br>
+                <input type="text" class="title" name="title" value="<%= post.title %>" placeholder="title">
+            </div>
+            <div class="form-add">
+            <label for="" id="content"> Content </label><br>
+                <textarea name="content" value="" id="content"placeholder="Type anythig" ><%= post.content %></textarea>
+        </div>
+        <button type="submit" id="submit"> Update</button>
+            </form>
+  </div>           
+
+
+  <%- include("partials/footer.ejs") %>

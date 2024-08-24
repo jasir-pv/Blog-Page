@@ -1,0 +1,50 @@
+<%- include("partials/header.ejs") %>
+
+
+
+    <!-- Hero section starts -->
+
+    <div class="hero">
+        <span>This is your Creatives</span>
+        <h1>My Blog</h1>
+
+        <button onclick="formActive()" id="form-active" type="button">Add</button>
+
+  
+    <!-- Hero setion ends -->
+     <div class="blog-posts">
+            <% cardBlog.forEach(function(post, index) { %>
+                <div class="card">
+                    <h2 class="card-title"><%= post.title %></h2>
+                    <p class="card-text"><%= post.content %></p>
+                    <div class="actions">
+
+                        <a href="/edit/<%= index %>">Edit</a>
+                        <a href="/delete/<%= index %>">Delete</a>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+
+    <!-- form starts -->
+
+    <form action="/add" method="post" class="form">
+        <div class="form-add">
+            <label for="">Title</label><br>
+            <input type="text" class="title" name="title" value="" placeholder="title">
+         </div>
+         <div class="form-add">
+        <label for="" id="content"> Content </label><br>
+            <textarea name="content" value="" id="content"placeholder="Type anythig"></textarea>
+    </div>
+   <button type="submit" id="submit"> Add Blog</button>
+        </form>
+
+     <!-- form ends -->
+
+
+    <!-- footer -->
+
+
+    <%- include("partials/footer.ejs") %>
+    
